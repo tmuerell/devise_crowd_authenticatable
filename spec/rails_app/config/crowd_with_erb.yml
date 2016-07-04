@@ -1,0 +1,14 @@
+<% @url = "http://localhost:4567/rest" %>
+
+authorizations: &AUTHORIZATIONS
+  required_groups:
+    - "group1"
+    
+test: &TEST
+  url: <%= @url %>
+  username: foo
+  password: bar
+  <<: *AUTHORIZATIONS
+  
+development:
+  <<: *TEST

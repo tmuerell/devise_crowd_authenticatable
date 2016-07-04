@@ -1,0 +1,21 @@
+authorizations: &AUTHORIZATIONS
+  required_groups:
+    - "group1"
+
+development:
+  url: http://localhost:8080/rest
+  username: admin
+  password: admin
+  # <<: *AUTHORIZATIONS
+
+test:
+  url: http://localhost:8080/rest
+  username: admin
+  password: admin
+  # <<: *AUTHORIZATIONS
+
+production:
+  url: http://localhost:8080/rest
+  username: admin
+  password: admin
+  # <<: *AUTHORIZATIONS

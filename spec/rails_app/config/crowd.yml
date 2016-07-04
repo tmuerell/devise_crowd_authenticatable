@@ -1,0 +1,12 @@
+authorizations: &AUTHORIZATIONS
+  required_groups:
+    - "user-group"
+    
+test: &TEST
+  url: http://localhost:4567/rest
+  username: foo
+  password: bar
+  <<: *AUTHORIZATIONS
+  
+development:
+  <<: *TEST
