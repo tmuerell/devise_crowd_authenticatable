@@ -29,7 +29,7 @@ module Devise
       
       def authenticate!
         begin
-          JSON.parse(@crowd['/usermanagement/1/authentication.json?username=' + @login].post '{ "value": "' + @password + '" }', :content_type => 'application/json', 'Accept' => 'application/json')
+          JSON.parse(@crowd['/usermanagement/1/authentication.json?username=' + @login].post '{ "value": "' + @password.gsub(/"/, '\"') + '" }', :content_type => 'application/json', 'Accept' => 'application/json')
         rescue Object => e
           DeviseCrowdAuthenticatable::Logger.send("ERROR: #{e.inspect}")
           false
